@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>the race</title>
+</head>
+
+<body>
+    <!-- ========= -->
+    <!-- Your HTML -->
+    <!-- ========= -->
+
+
+    <!-- =============== -->
+    <!-- Javascript code -->
+    <!-- =============== -->
+
+    <script  type=text/javascript>
+
+
+        var colors_shapes = {
+            red: {
+                circle: {
+                    flat:{},
+                    skinny:{}
+                },
+                square: {
+                    flat:{},
+                    skinny:{}
+                },
+
+            },
+            blue:{
+                circle:{
+                    flat:{},
+                    skinny:{}
+                },
+                square:{
+                    flat:{},
+                    skinny:{}
+                },
+            }
+        };
+
+        console.log(colors_shapes)
+        console.log("=======================================")
+        var the_pivot = {}
+        Object.keys(colors_shapes).forEach(function(color){
+            Object.keys(colors_shapes[color]).forEach(function(shape){
+                if(!the_pivot[shape]){
+                    the_pivot[shape] = {};
+                }
+                if(!the_pivot[shape][color]){
+                    the_pivot[shape][color] = colors_shapes[color][shape];
+                }
+            })
+        })
+
+        console.log(the_pivot);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
