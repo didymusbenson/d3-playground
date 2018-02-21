@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- I recommend you host this file on your own, since this will change without warning -->
+  <script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>
+  <h2>Datamaps Playground</h2>
+  <p><a href="http://datamaps.github.io/">DataMaps Project Homapage</a></p>
+  <div id="container1" style="position: relative; width: 50%; max-height: 500px;"></div>
+
+
+     <script>
+       //basic map config with custom fills, mercator projection
+      var map = new Datamap({
+        scope: 'world',
+        element: document.getElementById('container1'),
+        projection: 'mercator',
+        height: 500,
+        fills: {
+          defaultFill: 'blue',
+          hover: 'pink'
+        },
+            geographyConfig: {
+//        dataUrl: null, //if not null, datamaps will fetch the map JSON (currently only supports topojson)
+//        hideAntarctica: true,
+//        borderWidth: 1,
+//        borderOpacity: 1,
+//        borderColor: '#FDFDFD',
+//        popupTemplate: function(geography, data) { //this function should just return a string
+//          return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
+//        },
+//        popupOnHover: true, //disable the popup while hovering
+        highlightOnHover: true,
+        highlightFillColor: 'black',
+        highlightBorderColor: 'rgba(250, 15, 160, 0.2)',
+//        highlightBorderWidth: 2,
+//        highlightBorderOpacity: 1
+    },
+        data: {
+//          USA: {fillKey: 'lt50' },
+//          RUS: {fillKey: 'lt50' },
+//          CAN: {fillKey: 'lt50' },
+//          BRA: {fillKey: 'gt50' },
+//          ARG: {fillKey: 'gt50'},
+//          COL: {fillKey: 'gt50' },
+//          AUS: {fillKey: 'gt50' },
+//          ZAF: {fillKey: 'gt50' },
+//          MAD: {fillKey: 'gt50' }
+        }
+      })
+
+
+
+
+       //bubbles, custom popup on hover template
+     map.bubbles([{
+       popupTemplate: function(geo, data) {
+         return "<div class='hoverinfo'>It is " + data.name + "</div>";
+       }
+     }]);
+
+         map.scope = "usa";
+     </script>
+</body>
